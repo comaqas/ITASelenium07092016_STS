@@ -1,5 +1,6 @@
 package Core;
 
+import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeTest;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -16,7 +17,7 @@ public class TestBase {
 //        System.setProperty("webdriver.chrome.driver", "C:\\Users\\stelmak\\chromedriver.exe");
 //        System.setProperty("selenide.browser", "chrome");
         open("http://automationpractice.com/index.php");
-        //Configuration.holdBrowserOpen = true;
+        Configuration.holdBrowserOpen = true;
     }
 
 //    @AfterTest

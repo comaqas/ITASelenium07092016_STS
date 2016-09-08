@@ -38,6 +38,16 @@ public class AuthenticationPage {
 
     }
 
+    public static void wrongAuthentication(){
+        $(EMAIL).sendKeys("ererer@rtr.com");
+        $(PASSWORD).sendKeys(password);
+        $(SIGNIN).click();
+    }
+
+    public static void clickOnCreateAccountButton(){
+        $(CREATEACCOUNT).click();
+    }
+
 
 
 }

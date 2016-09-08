@@ -19,6 +19,8 @@ public class Header {
     private static final By CARTBUTTON = Locators.get("CartPage.Cart");
     private static final By LOGOUT = Locators.get("Header.Logout");
     private static final By MAINPAGE = Locators.get("Header.MainPage");
+    private static final By EVENINGDRESSESLINK = Locators.get("Header.EveningDresses");
+
 
     public static void goToAuthenticationPage(){
         $(SIGNIN).click();
@@ -54,6 +56,13 @@ public class Header {
     public static void goToMainPage(){
         $(MAINPAGE).click();
     }
+
+    public static void goToDressesPage(){
+        $(WOMENBUTTON).hover();
+        $(EVENINGDRESSESLINK).click();
+    }
+
+
 
 
 }

@@ -36,18 +36,7 @@ public class ShopingCartTest extends TestBase {
         CartPage.addProducttocart();
         Header.goToCart();
         String orderNumber = CartPage.passThroughOrderTabsAndGetOrderReference();
-        //System.out.println(orderNumber.substring(180,189));
-//        Footer.goToOrderHistory();
-//        List<SelenideElement> order_reference = $$(By.cssSelector(".history_link.bold.footable-first-column"));
-//        for (SelenideElement element : order_reference) {
-//            if (element.getText().contains(orderNumber)) {
-//                return;
-//
-//            }
-//
-//            ///Assert.assertTrue(element.getText().contains(orderNumber));
-//
-//        }
+
         Assert.assertTrue(CartPage.isOrderHistoryContainsOrderNumber(orderNumber), "Assert is failed");
 
         Header.logOut();
