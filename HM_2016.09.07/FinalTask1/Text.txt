@@ -1,0 +1,8 @@
+    shouldBe: Checks what the HTML element has in a certain condition;
+    shouldhave: Check what the HTML element must have in a certain condition;
+    find: Search some information on the element;
+    filter: Filters some information on the element;
+    exclude: Filters all but certain elements of a condition.
+
+
+
