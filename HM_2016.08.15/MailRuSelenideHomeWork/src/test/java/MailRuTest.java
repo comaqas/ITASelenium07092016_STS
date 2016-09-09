@@ -20,7 +20,7 @@ public class MailRuTest extends TestBase{
 
         LoginPage.Autorization();
        // $(By.cssSelector(".b-nav__item__text")).shouldBe(Condition.visible);
-        EMailPage.countOfEmails(driver);
+        EMailPage.countOfEmails();
     }
 
     @Test
@@ -28,7 +28,7 @@ public class MailRuTest extends TestBase{
 
         Configuration.holdBrowserOpen = true;
         LoginPage.Autorization();
-        EMailPage.addPhotoToPrifile(driver);
+        EMailPage.addPhotoToPrifile();
 
     }
 
@@ -36,7 +36,7 @@ public class MailRuTest extends TestBase{
     public void sentNewEmail(){
         Configuration.holdBrowserOpen = true;
         LoginPage.Autorization();
-        EMailPage.writeNewEmail(driver);
+        EMailPage.writeNewEmail();
 
     }
 

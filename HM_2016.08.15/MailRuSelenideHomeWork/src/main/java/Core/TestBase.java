@@ -12,14 +12,14 @@ import static com.codeborne.selenide.Selenide.open;
  * Created by user on 25.08.2016.
  */
 public class TestBase {
-   protected WebDriver driver;
+   //protected WebDriver driver;
 
     @BeforeTest
     public  void setup(){
 
 
-        //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-        //System.setProperty("selenide.browser", "chrome");
+//        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+//        System.setProperty("selenide.browser", "chrome");
         open("https://mail.ru");
 
 

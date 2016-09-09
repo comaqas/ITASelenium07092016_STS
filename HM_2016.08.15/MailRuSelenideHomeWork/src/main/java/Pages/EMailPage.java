@@ -2,10 +2,7 @@ package Pages;
 
 import Helpers.RandomClass;
 import com.codeborne.selenide.Condition;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 //import static com.codeborne.selenide.Condition.visible;
 //import static com.codeborne.selenide.Selenide.$;
@@ -36,12 +33,13 @@ public class EMailPage {
     private static final By SUBJECT = By.cssSelector("input[name='Subject']");
     //private static final By MAILBODY = By.id("#tinymce");
     private static final By MAILBODY = By.cssSelector("body[class='mceContentBody increase-font']");
+    private static final By SEND = By.cssSelector("div[data-name='send']");
 
 
 
 //
 //  }
-    public static void countOfEmails(WebDriver driver){
+    public static void countOfEmails(){
         int letters=0;
         while (true){
             letters = letters+$$(EMAILLIST).size();
@@ -55,7 +53,7 @@ public class EMailPage {
         System.out.println("Count of emails " + letters);
     }
 
-    public static void addPhotoToPrifile(WebDriver driver){
+    public static void addPhotoToPrifile(){
        // $(PROFILE).click();
 
         open("https://e.mail.ru/settings/userinfo");
@@ -77,14 +75,14 @@ public class EMailPage {
 
     }
 
-    public static void writeNewEmail (WebDriver driver){
+    public static void writeNewEmail (){
 
         $(NEWEMAIL).waitUntil(Condition.visible, 10000).click();
-        $(TO).sendKeys("Telkiza@tut.by");
+        $(TO).sendKeys("test_zdravo7@tut.by");
         $(SUBJECT).sendKeys(RandomClass.getSubject());
-        $(SUBJECT).pressTab().sendKeys(RandomClass.getMailText());
-        //$(MAILBODY).sendKeys(RandomClass.getMailText());
-        //RandomClass.getMailText();
+        $(SUBJECT).sendKeys(Keys.TAB, RandomClass.getMailText());
+
+        $(SEND).waitUntil(Condition.visible, 10000).click();
 
     }
 
